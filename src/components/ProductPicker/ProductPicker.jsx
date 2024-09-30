@@ -6,7 +6,7 @@ import { TextField, DialogActions, DialogContent, CircularProgress } from '@mui/
 import { useState, useEffect, useRef } from 'react';
 import ProductSelector from './ProductSelector';
 import CustomButton from '../../common-components/CustomButton';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import axios from 'axios';
 import { debounce } from 'lodash';
 import { useProductStore } from '../../store/useProductStore';

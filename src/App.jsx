@@ -5,7 +5,7 @@ import ProductList from './components/ProductList/ProductList';
 import AddProduct from './components/AddProduct/AddProduct';
 import favIcon from '/favIcon.svg';
 import { useProductStore } from './store/useProductStore';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 
 function App() {
   const { productList } = useProductStore();
