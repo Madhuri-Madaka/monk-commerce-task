@@ -8,7 +8,7 @@ import ProductSelector from './ProductSelector';
 import CustomButton from '../../common-components/CustomButton';
 import Scrollbars from 'react-custom-scrollbars';
 import axios from 'axios';
-import { debounce } from 'lodash'; // Import debounce from lodash
+import { debounce } from 'lodash';
 import { useProductStore } from '../../store/useProductStore';
 
 const BASE_API_URL = 'https://thingproxy.freeboard.io/fetch/http://stageapi.monkcommerce.app/task/products/search'; // Adjust proxy
