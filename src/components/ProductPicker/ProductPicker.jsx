@@ -105,7 +105,6 @@ export const ProductPicker = ({ onClose, open, onProductAdd }) => {
     // Handle scroll and detect when user has reached the bottom
     const handleScrollFrame = (values) => {
         const { scrollTop, scrollHeight, clientHeight } = values;
-        console.log(scrollHeight, clientHeight, scrollTop)
         // If the user has scrolled near the bottom, fetch the next page
         if (scrollTop + clientHeight >= scrollHeight - 10 && !isLoading && hasMoreProducts) {
             setPage((prevPage) => prevPage + 1); // Load the next page
@@ -167,7 +166,9 @@ export const ProductPicker = ({ onClose, open, onProductAdd }) => {
                     )}
 
                     {/* Display loading indicator for pagination */}
-                    {isLoading && !searchLoading && <div className='loader'>Loading more products...</div>}
+                    {isLoading && !searchLoading && <div className='loader'>
+                        <CircularProgress />
+                    </div>}
                     {!hasMoreProducts && !noResults && !searchLoading && (
                         <div className='loader'>No more products to load</div>
                     )} {/* Show message when no more products */}

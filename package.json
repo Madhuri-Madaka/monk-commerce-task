@@ -21,8 +21,11 @@
     "axios": "^1.7.7",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
+    "react-bottom-scroll-listener": "^5.1.0",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.3.1",
+    "react-virtualized": "^9.22.5",
+    "react-window": "^1.8.10",
     "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
