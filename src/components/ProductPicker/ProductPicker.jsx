@@ -11,7 +11,7 @@ import axios from 'axios';
 import { debounce } from 'lodash';
 import { useProductStore } from '../../store/useProductStore';
 
-const BASE_API_URL = 'https://thingproxy.freeboard.io/fetch/http://stageapi.monkcommerce.app/task/products/search'; // Adjust proxy
+const BASE_API_URL = '/.netlify/functions/fetchProducts';
 
 export const ProductPicker = ({ onClose, open, onProductAdd }) => {
     const [products, setProducts] = useState([]); // Product list
@@ -56,9 +56,6 @@ export const ProductPicker = ({ onClose, open, onProductAdd }) => {
         try {
             const limit = 10; // Fetch 10 products at a time
             const response = await axios.get(BASE_API_URL, {
-                headers: {
-                    'x-api-key': '72njgfa948d9aS7gs5',
-                },
                 params: {
                     search: searchTerm || '',
                     page,
@@ -108,7 +105,7 @@ export const ProductPicker = ({ onClose, open, onProductAdd }) => {
     // Handle scroll and detect when user has reached the bottom
     const handleScrollFrame = (values) => {
         const { scrollTop, scrollHeight, clientHeight } = values;
-
+        console.log(scrollHeight, clientHeight, scrollTop)
         // If the user has scrolled near the bottom, fetch the next page
         if (scrollTop + clientHeight >= scrollHeight - 10 && !isLoading && hasMoreProducts) {
             setPage((prevPage) => prevPage + 1); // Load the next page

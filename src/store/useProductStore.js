@@ -32,17 +32,17 @@ export const useProductStore = create((set) => ({
   // Function to replace an existing product by its id with a new product
   replaceProduct: (productId, newProducts) => 
     set((state) => {
-        const productIndex = state.productList.findIndex(product => product.id === productId); // Find the index of the product to replace
+        const productIndexToReplace = state.productList.findIndex(product => product.id === productId); // Find the index of the product to replace
         
-        if (productIndex === -1) {
+        if (productIndexToReplace === -1) {
             return state; // If the product is not found, return the current state
         }
 
         // Create a new product list
         const updatedProductList = [
-            ...state.productList.slice(0, productIndex), // Products before the index
+            ...state.productList.slice(0, productIndexToReplace), // Products before the index
             ...newProducts, // New products to insert
-            ...state.productList.slice(productIndex + 1) // Products after the index
+            ...state.productList.slice(productIndexToReplace + 1) // Products after the index
         ];
 
         return { productList: updatedProductList }; // Return the updated product list
