@@ -1,0 +1,33 @@
+/* Wrapper for the entire product list component */
+.product-list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title at the top of the product list */
+.list-title {
+    margin-left: 36px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Individual product item */
+.product-item {
+    height: 70px;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+/* Headers for the columns in the list (Product, Discount) */
+.list-headers {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    margin-right: 68px;
+    margin-bottom: 12px;
+}
+
+/* Main content area where the products are displayed */
+.list-content {
+    display: flex;
+    flex-direction: column;
+}

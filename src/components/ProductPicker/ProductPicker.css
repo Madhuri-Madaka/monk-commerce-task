@@ -1,0 +1,95 @@
+/* Dialog title styling */
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+/* Content area for the dialog */
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    border-bottom: 1px solid #D1D1D1;
+    width: 35vw;
+    max-width: 100%;
+}
+
+/* Search container styling */
+.search-container {
+    padding: 12px 24px;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+/* Product label containing image and text */
+.product-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Product information wrapper */
+.product-info {
+    padding: 0 24px;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+/* Product variant wrapper */
+.product-variant {
+    position: relative;
+}
+
+/* Border separator for product variants */
+.product-variant::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    right: -24px;
+    border-top: 1px solid #D1D1D1;
+}
+
+/* Full-width for product checkbox label */
+.MuiFormControlLabel-root, .MuiFormControlLabel-label {
+    width: 100%;
+}
+
+/* Flexbox to align variant label with price */
+.variant-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Footer section for dialog */
+.footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 8px 24px !important;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+/* Close icon in the dialog title */
+.close-icon {
+    cursor: pointer;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .dialog-content {
+        width: 90%;
+        padding: 15px;
+    }
+}

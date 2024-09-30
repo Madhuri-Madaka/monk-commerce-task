@@ -1,0 +1,34 @@
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  max-height: 72vh;
+  overflow: auto;
+  border-radius: 6px;
+}
+
+.preview {
+  border-radius: 6px !important;
+  width: 35vw;
+  height: 72vh;
+  overflow: auto;
+}
+
+.MuiDialog-paper {
+  max-width: unset !important;
+}
+
+.header-title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 8px 24px;
+  color: #7E8185;
+  border-bottom: 1px solid #D1D1D1;
+}

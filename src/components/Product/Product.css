@@ -1,0 +1,124 @@
+/* Container for each product item */
+.product-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Container for each variant within the product */
+.product-variant-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 60px;
+    margin-right: 64px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the variant text inside the variant container */
+.product-variant-text {
+    display: flex;
+    border: 1px solid #c8c8c8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 12px;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+/* Wrapper for input and edit icon */
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Variant list container */
+.variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Drag handle styling */
+.drag-handle {
+    cursor: grab;
+    width: 10px;
+    height: 30px;
+}
+
+/* Input field for product title */
+.product-input {
+    cursor: text;
+    border: 1px solid #00000012;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    padding: 6px 10px;
+    width: 245px;
+    padding-right: 30px;
+}
+
+/* Close (remove) icon styling */
+.close-icon {
+    color: #7E8185;
+    width: 18px !important;
+}
+
+/* Edit icon styling */
+.edit-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Focus state for the product input field */
+.product-input:focus-visible {
+    outline: none;
+}
+
+/* Button for adding a discount */
+.discount-btn {
+    width: 202px;
+    height: 30px;
+    padding: 6px 10px;
+    border: none;
+    background: #008060;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Toggle for showing or hiding variants */
+.product-variants-toggle {
+    display: flex;
+    justify-content: end;
+    color: #006EFF;
+    font-size: 12px;
+    align-items: center;
+    text-decoration: underline;
+    margin: 5px 62px 5px 24px;
+}
+
+/* Small input fields for discount amount and type */
+.small-input {
+    width: 92px;
+    cursor: text;
+    border: 1px solid #00000012;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    padding: 6px 10px;
+}
+
+/* Discount input container */
+.discount-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Icon for expanding or collapsing variants */
+.toggle-icon {
+    width: 18px;
+}

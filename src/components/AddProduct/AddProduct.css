@@ -1,0 +1,15 @@
+.button-container {
+    display: flex;
+    justify-content: end;
+    margin-right: 66px;
+}
+
+.button-container button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid #008060;
+    color: #008060;
+    width: 202px;
+    font-weight: 600;
+    cursor: pointer;
+}
