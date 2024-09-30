@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { Scrollbar } from 'react-scrollbars-custom';
+import { createRoot } from 'react-dom/client';
 import App from './App.jsx'
 import './index.css'
 import { ScopedCssBaseline, ThemeProvider } from '@mui/material';
