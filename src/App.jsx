@@ -20,9 +20,9 @@ function App() {
           <ProductList />
           <AddProduct />
         </Scrollbars>
-        <Scrollbars autoHide style={{ width: '35vw', height: '75vh'}} className="preview">
+        {/* <Scrollbars autoHide style={{ width: '35vw', height: '75vh'}} className="preview">
           <JsonView value={productList} style={nordTheme} displayDataTypes={false} enableClipboard={false} />
-        </Scrollbars>
+        </Scrollbars> */}
       </div>
       
     </div>

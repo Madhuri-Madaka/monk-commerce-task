@@ -1,15 +1,17 @@
 import { create } from 'zustand';
 
+const initalProductList = [
+  {
+    id: "1", // Unique identifier for the product
+    title: '', // Title of the product (empty by default)
+    variants: [], // List of variants (empty by default)
+  },
+];
+
 // Zustand store to manage the product list and its actions
 export const useProductStore = create((set) => ({
   // Initial state with an empty product list
-  productList: [
-    {
-      id: "1", // Unique identifier for the product
-      title: '', // Title of the product (empty by default)
-      variants: [], // List of variants (empty by default)
-    },
-  ],
+  productList: initalProductList,
 
   // Function to set or replace the entire product list
   setProductList: (newList) => set({ productList: newList }),
@@ -24,10 +26,15 @@ export const useProductStore = create((set) => ({
     })),
 
   // Function to remove a product by its unique id
-  removeProduct: (productId) =>
-    set((state) => ({
-      productList: state.productList.filter((product) => product.id !== productId), // Remove product by id
-    })),
+  removeProduct: (productId) => {
+    set((state) => {
+      const filteredProducts = state.productList.filter((product) => product.id !== productId);
+
+      return  {
+        productList: filteredProducts.length > 0 ? filteredProducts : initalProductList,
+      }
+    });
+  },
 
   // Function to replace an existing product by its id with a new product
   replaceProduct: (productId, newProducts) => 

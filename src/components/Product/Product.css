@@ -18,7 +18,7 @@
 /* Styling for the variant text inside the variant container */
 .product-variant-text {
     display: flex;
-    border: 1px solid #c8c8c8;
+    border: 1px solid #0000001A;
     padding: 4px 12px;
     border-radius: 20px;
     width: 100%;
@@ -51,7 +51,7 @@
 /* Input field for product title */
 .product-input {
     cursor: text;
-    border: 1px solid #00000012;
+    border: 1px solid #0000001A;
     box-shadow: 0px 2px 4px 0px #0000001A;
     padding: 6px 10px;
     width: 245px;
@@ -106,8 +106,17 @@
 .small-input {
     width: 92px;
     cursor: text;
-    border: 1px solid #00000012;
+    border: 1px solid #0000001A;
     box-shadow: 0px 2px 4px 0px #0000001A;
+    padding: 6px 10px;
+}
+
+.variant-input {
+    width: 92px;
+    cursor: text;
+    border: 1px solid #0000001A;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    border-radius: 20px;
     padding: 6px 10px;
 }
 

@@ -37,6 +37,14 @@ body {
   padding: 16px;
 }
 
+.css-1y5vrnu-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-1y5vrnu-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: #008060 !important;
+}
+
+.MuiCircularProgress-root, .MuiCircularProgress-indeterminate, .MuiCircularProgress-colorPrimary {
+  color: #008060 !important;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

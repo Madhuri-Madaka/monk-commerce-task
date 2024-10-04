@@ -66,6 +66,35 @@ export const Product = ({ product, dragHandleProps }) => {
         updateDiscounts();
     }, [discountAmount, discountType]);
 
+    // Function to update the discount amount for a variant
+    const onVariantDiscountAmountChange = (value, variantIndex) => {
+        const updatedVariants = [...product.variants];
+        const discountType = updatedVariants[variantIndex]?.discountType || "flat";
+        // Update the discount value for the specific variant
+        updatedVariants[variantIndex] = {
+            ...updatedVariants[variantIndex],
+            discount: value,
+            discountType
+        };
+
+        // Replace the product with the updated variant array in the Zustand store
+        replaceProduct(product.id, [{ ...product, variants: updatedVariants }]);
+    };
+    
+    // Function to update the discount type for a variant
+    const onVariantDiscountTypeChange = (value, variantIndex) => {
+        const updatedVariants = [...product.variants];
+    
+        // Update the discountType value for the specific variant
+        updatedVariants[variantIndex] = {
+            ...updatedVariants[variantIndex],
+            discountType: value, // Set the discount type value (flat or percentage)
+        };
+    
+        // Replace the product with the updated variant array in the Zustand store
+        replaceProduct(product.id, [{ ...product, variants: updatedVariants }]);
+    };
+
     return (
         <>
             <div key={product.id} className="product-container">
@@ -168,10 +197,35 @@ export const Product = ({ product, dragHandleProps }) => {
                                                         <div>{variant.title}</div> 
                                                         <div>${variant.price}</div>
                                                     </div>
+                                                    <div className="discount-inputs">
+                                                        <input
+                                                            type="number"
+                                                            placeholder="Amount"
+                                                            className="variant-input"
+                                                            min={0}
+                                                            value={variant.discount || ""}
+                                                            onChange={(e) => onVariantDiscountAmountChange(e.target.value, index)}
+                                                        />
+                                                        <select
+                                                            className="variant-input"
+                                                            value={variant.discountType || 'flat'}
+                                                            onChange={(e) => onVariantDiscountTypeChange(e.target.value, index)}
+                                                        >
+                                                            <option value="flat">Flat Off</option>
+                                                            <option value="percent">% Off</option>
+                                                        </select>
+                                                    </div>
                                                     {/* Remove variant button */}
                                                     <CloseIcon
                                                         className='close-icon'
-                                                        onClick={() => removeVariant(product.id, variant.id)}
+                                                        onClick={() => {
+                                                            if (product.variants.length > 1) {
+                                                                removeVariant(product.id, variant.id)
+                                                            } else {
+                                                                removeProduct(product.id)
+                                                            }
+                                                            
+                                                        }}
                                                     />
                                                 </div>
                                             )}
